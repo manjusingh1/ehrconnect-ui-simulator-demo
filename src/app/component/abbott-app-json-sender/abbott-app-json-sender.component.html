@@ -1,0 +1,56 @@
+<header>
+    <app-header
+    ></app-header>
+  </header>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div>
+      <mat-form-field style="width: 30%;" appearance="outline">
+        <mat-label>Abbott App</mat-label>
+        <mat-select
+          formControlName="abbottApp"
+          (selectionChange)="onAbbottAppChange($event.value)"
+        >
+          <mat-option *ngFor="let option of getAbbottApp" [value]="option.id">
+            {{ option.displayName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Input Json</mat-label>
+        <textarea matInput formControlName="inputJson" style="height: 35vh;"></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="submit-row">
+      <button mat-raised-button type="button" (click)="beautifyJson()">
+        Beautify
+      </button>
+      <button
+        [disabled]="!myForm.valid"
+        mat-raised-button
+        color="primary"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+
+    <div>
+      <div style="display: flex; justify-content: space-between">
+        <mat-label>Response</mat-label>
+        <button mat-icon-button (click)="copyToClipboard()">
+          <mat-icon>content_copy</mat-icon>
+        </button>
+      </div>
+      <div class="response-field">
+        <mat-card>
+          <mat-card-content>
+            <pre id="responseText">{{ response | json }}</pre>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </form>

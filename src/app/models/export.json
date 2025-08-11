@@ -1,0 +1,204 @@
+{
+    "messageHeader": {
+    "version": "1.0",
+    "sendingApplication": "HF",
+    "sendingFacility": "ABBOTT",
+    "receivingApplication": "Cerner",
+    "receivingFacility": "Corewell Health Greenville Hospital",
+	"messageType": "ORU^R01",
+	"messageFormat": "JSON",
+    "datetimeOfMessage": "202411141600",
+    "messageControlId": "654323"
+        },
+        "patient": {
+            "patientId": "123456",
+            "patientIdentifierList": [
+                {
+                    "idNumber": "123456",
+                    "identifierTypeCode": "MR",
+                    "assigningAuthority": "HOSPITAL"
+                }
+            ],
+            "patientName": {
+                "familyName": "DOE",
+                "givenName": "JOHN",
+                "middleInitial": "A"
+            },
+            "dateOfBirth": "19800101",
+            "sex": "M",
+            "address": {
+                "streetAddress": "123 MAIN ST",
+                "city": "METROPOLIS",
+                "state": "NY",
+                "postalCode": "10001",
+                "country": "USA"
+            },
+            "emailAddress": "johndoe@gmail.com",
+            "phoneNumberHome": {
+                "telephoneNumber": "(555)123-4567"
+            }
+        },
+        "encounter": [
+            {
+                "setId": "1",
+                "visitNumber": "843838",
+                "patientClass": "I",
+                "assignedPatientLocation": {
+                    "room": "ICU",
+                    "bed": "BED01",
+                    "facility": "01"
+                },
+                "attendingDoctor": {
+                    "idNumber": "1234",
+                    "familyName": "SMITH",
+                    "givenName": "JOHN",
+                    "middleInitial": "A",
+                    "suffix": "MD"
+                },
+                "consultingDoctor": {
+                    "idNumber": "789456",
+                    "familyName": "TAYLOR",
+                    "givenName": "MARK",
+                    "middleInitial": "C",
+                    "suffix": "MD"
+                },
+                "admitDateTime": "202411141230"
+            }
+        ],
+        "allergyIntolerance": [
+            {
+                "setId": "1",
+                "allergen": "PENICILLIN",
+                "reaction": [
+                    "Produces Hives",
+                    "Itching"
+                ],
+                "identificationDate": "20141114"
+            }
+        ],
+        "diagnosticReport": {
+            "placerOrderNumber": "ORD12345",
+            "fillerOrderNumber": "FILL12345",
+            "universalServiceId": {
+                "id": "123456",
+                "text": "Complete Blood Count",
+                "codingSystem": "L"
+            },
+            "observationDateTime": "202411141245",
+            "orderingProvider": {
+                "idNumber": "1234",
+                "familyName": "DOE",
+                "givenName": "JANE",
+                "middleInitial": "A",
+                "suffix": "MD"
+            },
+            "resultStatus": "F"
+        },
+        "notes": [
+            {
+                "setId": "1",
+                "sourceOfComment": "L",
+                "comment": "Cardiac monitoring performed using Device Model XYZ123; 24-hour observation."
+            }
+        ],
+        "observations": [
+            {
+                "setId": "1",
+                "valueType": "NM",
+                "observationIdentifier": {
+                    "id": "12345",
+                    "text": "WBC",
+                    "codingSystem": "L"
+                },
+                "observationValue": 8.5,
+                "units": "10^3/uL",
+                "referenceRange": "4.0-10.5",
+                "abnormalFlags": "N",
+                "resultStatus": "F"
+            },
+            {
+                "setId": "2",
+                "valueType": "NM",
+                "observationIdentifier": {
+                    "id": "12346",
+                    "text": "HGB",
+                    "codingSystem": "L"
+                },
+                "observationValue": 14.2,
+                "units": "g/dL",
+                "referenceRange": "12.0-16.0",
+                "abnormalFlags": "N",
+                "resultStatus": "F"
+            },
+            {
+                "setId": "3",
+                "valueType": "ED",
+                "observationIdentifier": {
+                    "id": "PDF",
+                    "text": "Report",
+                    "codingSystem": "L"
+                },
+                "observationValue": {
+                    "dataType": "application/pdf",
+                    "encoding": "Base64",
+                    "value": "JVBERi0xLjQKJdP0zOEKMyA0IFRv....(base64-encoded PDF content continues)"
+                },
+                "resultStatus": "F"
+            }
+        ],
+        "medicationPrescription": [
+            {
+                "setId": "1",
+                "medication": {
+                    "id": "123456",
+                    "name": "Aspirin",
+                    "codingSystem": "RXNORM"
+                },
+                "dosage": {
+                    "dose": "325",
+                    "units": "mg",
+                    "form": "tablet",
+                    "frequency": "QID",
+                    "route": "PO",
+                    "duration": "10 days"
+                },
+                "prescribingDoctor": {
+                    "idNumber": "5678",
+                    "familyName": "BROWN",
+                    "givenName": "LISA",
+                    "middleInitial": "A",
+                    "suffix": "MD"
+                },
+                "prescriptionDateTime": "202411141600"
+            }
+        ],
+        "billing": {
+            "transactionId": "1",
+            "transactionDateTime": {
+                "start": "202411141530",
+                "end": "202411141600"
+            },
+            "transactionType": "CG",
+            "chargeCode": {
+                "id": "123456",
+                "description": "Cardiac Monitoring",
+                "codingSystem": "CPT"
+            },
+            "transactionAmount": {
+                "value": "450",
+                "currency": "USD"
+            },
+            "billingProvider": {
+                "idNumber": "5678",
+                "familyName": "BROWN",
+                "givenName": "LISA",
+                "middleInitial": "A",
+                "suffix": "MD"
+            },
+            "patientLocation": {
+                "room": "ICU",
+                "bed": "BED01",
+                "facility": "01"
+            }
+        }
+    }
