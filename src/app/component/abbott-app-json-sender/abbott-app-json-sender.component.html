@@ -5,7 +5,7 @@
   <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
     <div>
       <mat-form-field style="width: 30%;" appearance="outline">
-        <mat-label>Abbott App</mat-label>
+        <mat-label>App Name</mat-label>
         <mat-select
           formControlName="abbottApp"
           (selectionChange)="onAbbottAppChange($event.value)"
